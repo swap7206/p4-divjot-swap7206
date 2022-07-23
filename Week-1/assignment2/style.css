@@ -120,8 +120,6 @@ flex: 9;
 }
 
 .footer {
-  border-color: #000000;
-  border-style: double;
   display: flex;
   flex-direction: row;
   position: fixed;
