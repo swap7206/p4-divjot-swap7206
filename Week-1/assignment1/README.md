@@ -175,7 +175,7 @@ After the paint, we see the content on the screen and the first time we see some
 
 ### **7. Script Processors** *[Read More](https://www.innoq.com/en/blog/loading-javascript/)*
  Parsing halts when it comes across ```<link>, <script>``` and ```<style>``` tag.
-So if I have ```<script src="path/to/script"></script>``` in the middle of the HTML, The parser will halt there, will fetch the script, wait for the response, execute it and then it will continue the parsing. This is why we put ```<scipt>``` at the end of the body so that we can complete the parsing first.
+So if I have ```<script src="path/to/script"></script>``` in the middle of the HTML, The parser will halt there, will fetch the script, wait for the response, execute it and then it will continue the parsing. This is why we put ```<script>``` at the end of the body so that we can complete the parsing first.
 
 A similar thing happens when we put ```<link rel="stylesheet" href="path/to/css" />```. The parser fetches the CSS and makes sure that the CSSOM is ready before putting content on the screen. This is why we don't see a flash of CSSless content before the page load instead we see the content with its CSS loaded and applied.
 
