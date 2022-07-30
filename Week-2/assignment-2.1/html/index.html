@@ -8,6 +8,7 @@
     <title>Tribute Page - Dr. A.P.J. Abdul Kalam</title>
     <link rel="icon" type="image/x-icon" href="../resources/favicon.png">
     <link href="../styles/index.css" rel="stylesheet">
+    <script type = "text/javascript" src="../scripts/scripts.js"></script>
 </head>
 
 <body class="column">
@@ -147,23 +148,6 @@
         <p>For further Information visit <a role="link" href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam">this
                 link</a></p>
     </footer>
-    <script>
-
-
-        function toggleCheckbox(element) {
-            switch (element.value) {
-                case "mx":
-                    document.getElementById("mr").checked = document.getElementById("mrs").checked = document.getElementById("miss").checked = false;
-                    break;
-                case "mr":
-                    document.getElementById("mx").checked = document.getElementById("mrs").checked = document.getElementById("miss").checked = false; break;
-                case "mrs":
-                    document.getElementById("mx").checked = document.getElementById("mr").checked = document.getElementById("miss").checked = false; break;
-                case "miss":
-                    document.getElementById("mx").checked = document.getElementById("mr").checked = document.getElementById("mrs").checked = false; break;
-            }
-        }
-    </script>
 </body>
 
 </html>
