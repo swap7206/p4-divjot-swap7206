@@ -55,7 +55,8 @@
                             ballistic missiles from the technology of the successful SLV programme.</li>
                         <li>Played a pivotal organizational, technical, and political role in India's Pokhran-II nuclear
                             tests in 1998, the first since the original nuclear test by India in 1974.</li>
-                        <li>He was a visionary, through his <a role="link" href="http://surl.li/coiha">speeches</a> and <a role="link" href="http://surl.li/coigh">books</a> he trieed to ignite the mind of the
+                        <li>He was a visionary, through his <a role="link" href="http://surl.li/coiha">speeches</a> and
+                            <a role="link" href="http://surl.li/coigh">books</a> he trieed to ignite the mind of the
                             Indian youth.</li>
                     </ul>
                 </summary>
@@ -78,46 +79,56 @@
                         </p>
                     </div>
                 </summary>
-                <a class="article-link" role="link"
-                    href="http://surl.li/coihi">Quotes by Dr. APJ Abdul
+                <a class="article-link" role="link" href="http://surl.li/coihi">Quotes by Dr. APJ Abdul
                     Kalam</a>
             </article>
         </section>
 
         <div class="form-container">
+            <h4>Inorder to stay connected please sign up!</h4>
             <form class="column form" action="../scripts/scripts.js">
-                <label for="title">Title:</label>
+                <label for="title">Title</label>
                 <div class="row">
-                    <input id="mx" type="checkbox" value="1" name="mx"> Mx
-                    <input id="mx" type="checkbox" value="2" name="mr"> Mr
-                    <input id="mx" type="checkbox" value="3" name="mrs"> Mrs
-                    <input id="mx" type="checkbox" value="4" name="miss"> Miss
+                    <input id="mx" class="title-preferred" type="checkbox" value="mx" name="mx"
+                        onchange=toggleCheckbox(this)> Mx
+                    <input id="mr" class="title-preferred" type="checkbox" value="mr" name="mr"
+                        onchange=toggleCheckbox(this)> Mr
+                    <input id="mrs" class="title-preferred" type="checkbox" value="mrs" name="mrs"
+                        onchange=toggleCheckbox(this)> Mrs
+                    <input id="miss" class="title-preferred" type="checkbox" value="miss" name="miss"
+                        onchange=toggleCheckbox(this)> Miss
                 </div>
 
-                <label for="lastName">First Name:</label>
-                <input id="lastName" type="text" name="lastName" placeholder="John">
+                <label for="firstName">First Name <sup>&#8432;</sup></label>
+                <input id="firstName" type="text" name="firstName" placeholder="John" required pattern="^[a-zA-Z]+$"
+                    title="Accepts letters only">
 
-                <label for="email">Last Name:</label>
-                <input id="email" type="email" name="email" placeholder="Doe">
+                <label for="lastName">Last Name <sup>&#8432;</sup></label>
+                <input id="lastName" type="text" name="lastName" placeholder="Doe" required pattern="^[a-zA-Z]+$"
+                    title="Accepts letters only">
 
-                <label for="firstName">Email:</label>
-                <input id="firstName" type="text" name="email" placeholder="john.doe@example.com">
+                <label for="email">Email <sup>&#8432;</sup></label>
+                <input id="email" type="email" name="email" placeholder="john.doe@example.com" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
-                <label for="phoneNumber">Phone Number:</label>
+                <label for="phoneNumber">Phone Number</label>
                 <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone number with country code">
 
-                <label for="country">Country:</label>
-                <input id="country" type="text" name="country" placeholder="Enter your country name">
+                <label for="country-code" pattern="^[a-zA-Z]+$">Country code <sup>&#8432;</sup></label>
+                <input id="country-code" type="text" name="country-code" placeholder="Enter your country code" required
+                    pattern="[A-Za-z]{3}" title="Three letter country code">
 
-                <label for="pswd">Password:</label>
-                <input id="pwd" type="password" name="pswd" placeholder="Enter password">
+                <label for="pswd">Password <sup>&#8432;</sup></label>
+                <input id="pwd" type="password" name="pswd" placeholder="Enter password" required
+                    pattern="^[a-z0-9]{3,15}$" title="Password may only contain letters and numbers">
 
-                <label for="Confirm-pwd">Confirm Password:</label>
-                <input id="Confirm-pwd" type="password" name="Confirm-pswd" placeholder="Confirm password">
+                <label for="Confirm-pwd">Confirm Password <sup>&#8432;</sup></label>
+                <input id="Confirm-pwd" type="password" name="Confirm-pswd" placeholder="Confirm password" required
+                    pattern="^[a-z0-9]{3,15}$" title="Password may only contain letters and numbers">
 
                 <label>
-                    <input id="terms" type="checkbox" name="remember"> I agree to the <a role="link"
-                        href=https://www.dummyterm.com.html>terms and conditions</a>
+                    <input id="terms" type="checkbox" name="remember" required> <sup>&#8432;</sup> I agree to the <a
+                        role="link" href=https://www.dummyterm.com.html>terms and conditions</a>
                 </label>
 
                 <button id="signUp" type="submit">sign up</button>
@@ -136,6 +147,23 @@
         <p>For further Information visit <a role="link" href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam">this
                 link</a></p>
     </footer>
+    <script>
+
+
+        function toggleCheckbox(element) {
+            switch (element.value) {
+                case "mx":
+                    document.getElementById("mr").checked = document.getElementById("mrs").checked = document.getElementById("miss").checked = false;
+                    break;
+                case "mr":
+                    document.getElementById("mx").checked = document.getElementById("mrs").checked = document.getElementById("miss").checked = false; break;
+                case "mrs":
+                    document.getElementById("mx").checked = document.getElementById("mr").checked = document.getElementById("miss").checked = false; break;
+                case "miss":
+                    document.getElementById("mx").checked = document.getElementById("mr").checked = document.getElementById("mrs").checked = false; break;
+            }
+        }
+    </script>
 </body>
 
 </html>
