@@ -104,24 +104,30 @@ main {
     flex-wrap: wrap;
 }
 
+
 .flex-item-left {
     flex: 40%;
     margin-inline: 1rem;
     padding-top: 0.8rem;
-    background: FAF9F6;
 }
 
 .flex-item-right {
     flex: 40%;
     margin-inline: 1rem;
-    background: FAF9F6;
+}
+
+.article-link {
+    align-self: flex-end;
+    margin-inline: 1rem;
+    margin-top: 0.5rem
 }
 
 .cover_image {
     align-self: center;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 1rem;
+    margin-top: 3rem;
+    margin-inline: 1rem;
     background-color: #ccc;
     text-align: center;
     color: #222;
@@ -194,6 +200,10 @@ form {
 form>input,
 button {
     height: 1.5rem;
+}
+
+button:hover {
+background-color: #6495ed;
 }
 
 /* unvisited link */
