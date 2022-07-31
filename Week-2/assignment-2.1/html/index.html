@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page - Dr. A.P.J. Abdul Kalam</title>
+    <link rel="icon" type="image/x-icon" href="../resources/favicon.png">
+    <link href="../styles/index.css" rel="stylesheet">
+    <script type = "text/javascript" src="../scripts/scripts.js"></script>
+</head>
+
+<body class="column">
+    <header class="row">
+        <img class="header-img" src="../resources/favicon.png" alt="kalam sir image" />
+        <div class="column">
+            <h1><strong>Dr. A.P.J. Abdul Kalam</strong></h1>
+            <h2>An epitome of intellect, wisdom and simplicity</h2>
+        </div>
+        <img class="header-img" src="../resources/bharat-ratan-award.png" alt="bharat ratan award" />
+    </header>
+
+    <main class="flex-container">
+        <section class="column flex-item-left">
+            <article class="column">
+                <summary>
+                    <p><strong>A.P.J. Abdul Kalam</strong>, in full <em><strong>Avul Pakir Jainulabdeen Abdul
+                                Kalam</strong></em>, (born October 15, 1931, Rameswaram,
+                        India—died July 27, 2015, Shillong), Indian scientist and politician who played a leading role
+                        in
+                        the development of India’s missile and nuclear weapons programs. He was president of India from
+                        2002
+                        to 2007</p>
+                </summary>
+                <a class="article-link" role="link" href="http://surl.li/coihd">Read
+                    More</a>
+            </article>
+
+            <figure class="cover_image">
+                <img class="cover" id="image" src="../resources/KalamSirWithStudents.jpg"
+                    alt="Dr. Kalam sir with students" title="Dr. A. P. J. Abdul Kalam" />
+                <figcaption>
+                    Dr. A.P.J. Abdul Kalam – The Missile Man of India
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="column flex-item-right">
+            <article class="column">
+                <h3>Some of his great works :</h3>
+                <summary>
+                    <ul>
+                        <li>Development of ballistic missile and launch vehicle technology.</li>
+                        <li>Dr. Kalam directed two projects, Project Devil and Project Valiant, which sought to develop
+                            ballistic missiles from the technology of the successful SLV programme.</li>
+                        <li>Played a pivotal organizational, technical, and political role in India's Pokhran-II nuclear
+                            tests in 1998, the first since the original nuclear test by India in 1974.</li>
+                        <li>He was a visionary, through his <a role="link" href="http://surl.li/coiha">speeches</a> and
+                            <a role="link" href="http://surl.li/coigh">books</a> he managed to ignite the minds of the
+                            Indian youth.</li>
+                    </ul>
+                </summary>
+                <a class="article-link" role="link" href="http://surl.li/coihh">Read More</a>
+            </article>
+
+            <article class="column">
+                <h3>An inspiring quote by Dr. Kalam which I like the most:</h3>
+                <summary>
+                    <div class="quote-container">
+                        <p class="quote"><i>“</i>
+                            <em>Where there is righteousness in the heart,<br>
+                                There is beauty in the character.<br>
+                                When there is beauty in the character,<br>
+                                There is harmony in the home.<br>
+                                When there is harmony in the home,<br>
+                                There is order in the nation.<br>
+                                When there is order in the nation,<br>
+                                There is peace in the world.</em><i>”</i>
+                        </p>
+                    </div>
+                </summary>
+                <a class="article-link" role="link" href="http://surl.li/coihi">Quotes by Dr. APJ Abdul
+                    Kalam</a>
+            </article>
+        </section>
+
+        <div class="form-container">
+            <h4>Inorder to stay connected please sign up!</h4>
+            <form class="column form" action="../scripts/scripts.js">
+                <label for="title">Title</label>
+                <div class="row">
+                    <input id="mx" class="title-preferred" type="checkbox" value="mx" name="mx"
+                        onchange=toggleCheckbox(this)> Mx
+                    <input id="mr" class="title-preferred" type="checkbox" value="mr" name="mr"
+                        onchange=toggleCheckbox(this)> Mr
+                    <input id="mrs" class="title-preferred" type="checkbox" value="mrs" name="mrs"
+                        onchange=toggleCheckbox(this)> Mrs
+                    <input id="miss" class="title-preferred" type="checkbox" value="miss" name="miss"
+                        onchange=toggleCheckbox(this)> Miss
+                </div>
+
+                <label for="firstName">First Name <sup>&#8432;</sup></label>
+                <input id="firstName" type="text" name="firstName" placeholder="John" required pattern="^[a-zA-Z]+$"
+                    title="Accepts letters only">
+
+                <label for="lastName">Last Name <sup>&#8432;</sup></label>
+                <input id="lastName" type="text" name="lastName" placeholder="Doe" required pattern="^[a-zA-Z]+$"
+                    title="Accepts letters only">
+
+                <label for="email">Email <sup>&#8432;</sup></label>
+                <input id="email" type="email" name="email" placeholder="john.doe@example.com" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone number with country code">
+
+                <label for="country-code" pattern="^[a-zA-Z]+$">Country code <sup>&#8432;</sup></label>
+                <input id="country-code" type="text" name="country-code" placeholder="Enter your country code" required
+                    pattern="[A-Za-z]{3}" title="Three letter country code">
+
+                <label for="pswd">Password <sup>&#8432;</sup></label>
+                <input id="pwd" type="password" name="pswd" placeholder="Enter password" required
+                    pattern="^[a-z0-9]{3,15}$" title="Password may only contain letters and numbers">
+
+                <label for="Confirm-pwd">Confirm Password <sup>&#8432;</sup></label>
+                <input id="Confirm-pwd" type="password" name="Confirm-pswd" placeholder="Confirm password" required
+                    pattern="^[a-z0-9]{3,15}$" title="Password may only contain letters and numbers">
+
+                <label>
+                    <input id="terms" type="checkbox" name="remember" required> <sup>&#8432;</sup> I agree to the <a
+                        role="link" href=https://www.dummyterm.com.html>terms and conditions</a>
+                </label>
+
+                <input id="signUp" type="submit" value="Sign Up">
+
+                <div class="row" style="justify-content:space-around;">
+                    <a role="link" href="https://www.dummyAuth.com.html/signIn">Sign In</a>
+                    <a role="link" href="https://www.dummyAuth.com.html/reset">Forgot Password</a>
+                </div>
+            </form>
+        </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>For further Information visit <a role="link" href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam">this
+                link</a></p>
+    </footer>
+</body>
+
+</html>

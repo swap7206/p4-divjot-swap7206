@@ -1,0 +1,269 @@
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 2em;
+    align-items: center;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background: #f1f2f2;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+header {
+    display: inherit;
+    width: 100%;
+    padding-bottom: 1em;
+    position: sticky;
+    top: 0em;
+    margin-block: 2em;
+    justify-content: center;
+    background: rgb(247, 148, 49);
+    background: linear-gradient(90deg, rgba(247, 148, 49, 1) 0%, rgba(247, 247, 247, 1) 33%, rgba(247, 247, 247, 1) 66%, rgba(17, 132, 7, 1) 100%);
+}
+
+.header-img {
+    height: 7rem;
+    margin: 1rem;
+}
+
+header>div {
+    align-items: center;
+    justify-content: center;
+}
+
+h1,
+h2 {
+    margin-block: 0.4rem;
+    text-align: center;
+}
+
+h3::before {
+    content: "🙌🏼";
+    font-size: 1.5rem;
+}
+
+main {
+    width: 80%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.flex-item-left {
+    flex: 40%;
+    margin-inline: 1rem;
+    padding-top: 0.8rem;
+}
+
+.flex-item-right {
+    flex: 40%;
+    margin-inline: 1rem;
+}
+
+.article-link {
+    align-self: flex-end;
+    margin-inline: 1rem;
+    margin-top: 0.5rem
+}
+
+.cover_image {
+    align-self: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-inline: 1rem;
+    background-color: #ccc;
+    text-align: center;
+    color: #222;
+    width: 30rem;
+}
+
+.cover_image .cover {
+    border-radius: 1rem;
+    height: auto;
+    width: 25rem;
+}
+
+.caption {
+    font-size: 0.5rem;
+}
+
+ul {
+    margin-block-start: 0%;
+}
+
+ul>li {
+    margin-bottom: 0.5rem;
+}
+
+p.quote {
+    text-align: center;
+    margin-block-start: 0%;
+    line-height: 1.5rem;
+}
+
+p.quote::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p.quote>i {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.quote-container {
+    border-radius: 1rem;
+    height: auto;
+    align-self: center;
+    padding: 0.8rem;
+    background-color: #ccc;
+}
+
+.form-container {
+    width: 45%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #ccc;
+}
+
+.form-container>* {
+    align-self: center;
+}
+
+form {
+    width: 90%;
+    line-height: 1.7rem;
+}
+
+form>input {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    width:1rem;
+}
+
+sup {
+    color: red;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* unvisited link */
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #f9429e;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: #f9429e;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    header {
+        position: relative;
+    }
+
+    section {
+        justify-content: center;
+    }
+
+    .flex-item-right,
+    .flex-item-left {
+        flex: 100rem;
+    }
+
+    .cover_image {
+        width: 60vw;
+    }
+
+    .cover_image .cover {
+        width: 50vw;
+    }
+
+    .form-container {
+        width: 70vw;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 62.5%;
+    }
+
+    button {
+        height: 2rem;
+        background-color: #6495ed;
+        }
+}
