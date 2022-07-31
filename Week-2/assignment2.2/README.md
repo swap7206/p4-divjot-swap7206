@@ -9,5 +9,3 @@
 ## Solution
 
 *[Preview URL](http://surl.li/coiyo)*
-
-![Assignment2.2 rotate & translate solution](./src/resources/assignment2.2-rotate-translate.gif)
