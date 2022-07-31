@@ -9,8 +9,6 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     padding: 2em;
     align-items: center;
     font-family: Georgia, serif;
@@ -26,45 +24,6 @@ body {
 
 .row {
     display: flex;
-}
-
-@media only screen and (max-width: 1215px) {
-    header {
-        position: relative !important;
-    }
-
-    section {
-        justify-content: center;
-    }
-
-    .flex-item-right,
-    .flex-item-left {
-        flex: 100rem !important;
-    }
-
-    .cover_image {
-        width: 60vw !important;
-    }
-
-    .cover_image .cover {
-        width: 50vw !important;
-    }
-
-    .form-container {
-        width: 70vw !important;
-        align-self: center;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 62.5% !important;
-    }
-
-    button {
-        height: 2rem !important;
-        background-color: #6495ed;
-        }
 }
 
 header {
@@ -202,17 +161,37 @@ form {
     line-height: 1.7rem;
 }
 
-form>input,
-button {
-    height: 1.5rem;
+form>input {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    width:1rem;
 }
 
 sup {
     color: red;
 }
 
-button:hover {
-background-color: #6495ed;
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
 /* unvisited link */
@@ -246,4 +225,45 @@ a:active {
     margin-bottom: 1rem;
     align-items: center;
     justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    header {
+        position: relative;
+    }
+
+    section {
+        justify-content: center;
+    }
+
+    .flex-item-right,
+    .flex-item-left {
+        flex: 100rem;
+    }
+
+    .cover_image {
+        width: 60vw;
+    }
+
+    .cover_image .cover {
+        width: 50vw;
+    }
+
+    .form-container {
+        width: 70vw;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 62.5%;
+    }
+
+    button {
+        height: 2rem;
+        background-color: #6495ed;
+        }
 }
