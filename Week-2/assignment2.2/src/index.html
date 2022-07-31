@@ -55,38 +55,43 @@ img {
 #container > div {
     flex: 50%;
     transition-property: transform;
-    transition-duration: 0.5s;
+    transition-duration: 2s;
 }
 
 #d00 {
     background-color: #F83D3A;
+    transform-origin: top left;
+}
+
+#d10 {
+    background-color: #3333FF;
+    transform-origin: bottom left;
 }
 
 #d01 {
     background-color: #FFEB3B;
+    transform-origin: top right;
 }
-
-#d10 {
-    background-color: #3333FF;}
 
 #d11 {
     background-color: #00B800;
+    transform-origin: bottom right;
 }
 
 #container:hover #d00 {
-    transform: translateX(-7.5rem) rotate(90deg);
+    transform: rotate(90deg);
 }
 
 #container:hover #d10 {
-    transform: translateX(-7.5rem) rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 #container:hover #d01 {
-    transform: translateX(7.5rem) rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 #container:hover #d11 {
-    transform: translateX(7.5rem) rotate(90deg);
+    transform: rotate(90deg);
 }
   </style>
 </head>
