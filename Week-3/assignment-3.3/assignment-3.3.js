@@ -31,6 +31,6 @@ function createIncrement(){
 /**
 * !Answer
 * *`increment()`* increases the counter but message is defined outside log function and is executed only once
-* *when `createIncrement()` is called at line no 18.
+* *when `createIncrement()` is called at line no 25.
 * *thus, irrespective of how many times increment function is called `message` variable has fixed value "Count is 0"
 */
