@@ -41,10 +41,10 @@
  }
 
  let input = [1, 3, 2, 4];
- console.log("input: ", input, " output: ", nextGreaterElement(input)); //? input:  [ 1, 3, 2, 4 ]  output:  [ 3, -1, 4, -1 ]
+ console.log("input:", input, "output:", nextGreaterElement(input)); //? input: [ 1, 3, 2, 4 ] output: [ 3, -1, 4, -1 ]
 
  input = [6, 8, 0, 1, 3];
- console.log("input: ", input, " output: ", nextGreaterElement(input));
+ console.log("input:", input, "output:", nextGreaterElement(input)); //? input: [ 6, 8, 0, 1, 3 ] output: [ 8, -1, 1, 3, -1 ]
 
  // Time Complexity = O(n) //? each element visited at max twice
  // space Complexity = O(n)
