@@ -55,6 +55,5 @@ console.log("input:", input, "output:", checkParanthesis(input)); //? input: "()
 input = "([] () [] { ({})]";
 console.log("input:", input, "output:", checkParanthesis(input)); //? input: "()" output: { isBalanced: false, unbalancedParanthesis: [ '(', '{', ']' ] }
 
-
  // Time Complexity = O(n)
  // space Complexity = O(n)
