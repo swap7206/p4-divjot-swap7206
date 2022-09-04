@@ -1,4 +1,5 @@
 /**
+ //! STACK AND QUE
  //? Problem 7.5: Next Greater Element
  * 
  * Given an array arr{} of size N having distinct elements,
