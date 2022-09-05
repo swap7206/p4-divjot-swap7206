@@ -34,24 +34,48 @@
 * Constraints: 1 <= Q <= 100 1 <= x <= 100
  */
 
-function Stack() {
-    const stack = [];
-  
-    this.push = function (value) {
-      stack.push(value);
-    };
-  
-    this.pop = function () {
-      if (stack.length === 0) {
-        return;
-      } else {
-        return stack.pop();
-      }
-    };
-  
-    this.peek = function () {
-      if (stack.length === 0) {
-        return;
-      } else return stack[stack.length - 1];
-    };
+  class Queue {
+    constructor() 
+    {
+        this.stack1 = [];
+        this.stack2 = [];
+    }
+    
+    enqueue(data)
+    {
+        while(this.stack1.length !== 0)
+        {
+            this.stack2.push(this.stack1.pop());
+        }
+
+        this.stack1.push(data);
+        while(this.stack2.length !== 0)
+        {
+            this.stack1.push(this.stack2.pop());
+        }
+    }
+
+    dequeue()
+    {
+        if (this.stack1.length === 0)
+        {
+            console.log("queue underflow");
+            return;
+        }
+        return this.stack1.pop();
+    }
   }
+
+  let queue = new Queue();
+
+  let arr = [18, 44, 23, 1, 67];
+  for (let val of arr)
+  {
+    queue.enqueue(val);
+  }
+
+  console.log(queue.dequeue());
+  console.log(queue.dequeue());
+
+ //? Expected Time Complexity : O(N) for push() and O(1) for pop()
+ //! Expected Auxilliary Space : creating Queue O(N) | push O(1) | pop O(1)
