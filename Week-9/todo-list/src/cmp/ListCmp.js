@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Checkbox, List, Paper, Typography } from '@mui/material'
+import { Checkbox, Divider, List, Paper, Typography } from '@mui/material'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 //cmp
 import { IconButtonCmp } from './ButtonCmp'
@@ -26,29 +26,32 @@ const ListCmp = () => {
     }
 
     return (
-        <Paper>
+        <Paper sx={{ marginTop: "20px" }}>
             <List>
                 {listItems.map((item, index) => (
-                    <ListItemWithColumns
-                        key={index}
-                        leftIcon={
-                            <Checkbox
-                                checked={item.checked}
-                                onChange={(event) => (handleChange(event, item, index))}
-                                inputProps={{ 'aria-label': 'controlled' }}
-                            />
-                        }
-                        cmpLeft={item.checked ? <Typography sx={{ textDecoration: "line-through" }}>{item.task}</Typography> : item.task}
-                        cmpRight={
-                            <IconButtonCmp
-                                onClick={() => (handleDeleteItem(index))}
-                            >
-                                <RemoveCircleOutlineIcon />
-                            </IconButtonCmp>
-                        }
-                        styleContainer={{ alignItems: "center" }}
-                        style={{ padding: "8px 16px" }}
-                    />
+                    <>
+                        <ListItemWithColumns
+                            key={index}
+                            leftIcon={
+                                <Checkbox
+                                    checked={item.checked}
+                                    onChange={(event) => (handleChange(event, item, index))}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />
+                            }
+                            cmpLeft={item.checked ? <Typography sx={{ textDecoration: "line-through" }}>{item.task}</Typography> : item.task}
+                            cmpRight={
+                                <IconButtonCmp
+                                    onClick={() => (handleDeleteItem(index))}
+                                >
+                                    <RemoveCircleOutlineIcon />
+                                </IconButtonCmp>
+                            }
+                            styleContainer={{ alignItems: "center" }}
+                            style={{ padding: "8px 16px" }}
+                        />
+                        <Divider />
+                    </>
                 ))
                 }
             </List>

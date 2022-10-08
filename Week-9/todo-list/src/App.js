@@ -6,9 +6,9 @@ export default function MyApp() {
   useLocalStorage("todoList", JSON.stringify([]));
 
   return (
-    <>
+    <div style={{ backgroundColor: "#fffafa", height: "100vh" }}>
       <CssBaseline />
       <TodoListApp />
-    </>
+    </div>
   );
 }
