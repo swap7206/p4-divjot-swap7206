@@ -130,7 +130,7 @@ Paint paints the elements with colors, backgrounds, shadows, etc.
 
 > First let's see what happens when we type URL in address bar and hit Enter:
 
-We type a URL and press the enter and the server responds with index.html. However, an HTML content is not what we see when we visit a website... we see a web page with colors and backgrounds and animations and pictures. So there's a process that turns the HTML content to a pretty webpage, and that is parsing and rendering!
+We type a URL and press the enter and the server responds with . However, an HTML content is not what we see when we visit a website... we see a web page with colors and backgrounds and animations and pictures. So there's a process that turns the HTML content to a pretty webpage, and that is parsing and rendering!
 ![Web page loading](./resources/WebPageLoading.png)
 
 ### **5. Tree Construction**
