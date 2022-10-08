@@ -1,9 +1,10 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import { useLocalStorage } from './hooks/useLocalStorage';
 import TodoListApp from './pages/TodoListApp';
 
 export default function MyApp() {
-  useLocalStorage("todoList", JSON.stringify([]));
+  if (!localStorage.getItem("todoList") || typeof JSON.parse(localStorage.getItem("todoList")) !== "object") {
+    localStorage.setItem("todoList", JSON.stringify([]));
+  }
 
   return (
     <div style={{ backgroundColor: "#fffafa", height: "100vh" }}>

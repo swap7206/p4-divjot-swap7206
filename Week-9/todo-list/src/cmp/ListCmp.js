@@ -1,28 +1,29 @@
-import { useState } from 'react'
 import { Checkbox, Divider, List, Paper, Typography } from '@mui/material'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 //cmp
 import { IconButtonCmp } from './ButtonCmp'
 import ListItemWithColumns from './ListItemWithColumns'
 
-const ListCmp = () => {
-
-    const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem("todoList")));
+const ListCmp = (props) => {
+    const listItems = props.listItems;
 
     const handleChange = (event, item, index) => {
         item.checked = event.target.checked
         const temp = listItems;
         temp.splice(index, 1, item);
-        localStorage.setItem("todoList", JSON.stringify(temp));
-        setListItems(JSON.parse(localStorage.getItem("todoList")));
+        props.handleListUpdate(temp);
+        // setListItems(JSON.parse(localStorage.getItem("todoList")));
     }
 
     const handleDeleteItem = (index) => {
-        console.log("clicked", index);
         const temp = listItems;
         temp.splice(index, 1);
-        localStorage.setItem("todoList", JSON.stringify(temp));
-        setListItems(JSON.parse(localStorage.getItem("todoList")));
+        if (temp !== null) {
+            props.handleListUpdate(temp);
+        } else {
+            props.handleListUpdate([]);
+        }
+        // setListItems(JSON.parse(localStorage.getItem("todoList")));
     }
 
     return (
@@ -44,13 +45,13 @@ const ListCmp = () => {
                                 <IconButtonCmp
                                     onClick={() => (handleDeleteItem(index))}
                                 >
-                                    <RemoveCircleOutlineIcon />
+                                    <RemoveCircleOutlineIcon sx={{ color: "red" }} />
                                 </IconButtonCmp>
                             }
                             styleContainer={{ alignItems: "center" }}
                             style={{ padding: "8px 16px" }}
                         />
-                        <Divider />
+                        {(listItems.length > 1 && index !== (listItems.length - 1)) && <Divider />}
                     </>
                 ))
                 }

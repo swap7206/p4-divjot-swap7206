@@ -1,17 +1,29 @@
 import { useCallback, useState } from "react";
 
-export function useLocalStorage(key, initialState) {
-    const [value, setValue] = useState(localStorage.getItem(key) ?? initialState);
+
+export function useLocalStorageNonString(key, initialState) {
+    const serializedInitialState = JSON.stringify(initialState);
+    let storageValue = initialState;
+    try {
+        storageValue = JSON.parse(localStorage.getItem(key)) ?? initialState;
+    } catch {
+        localStorage.setItem(key, serializedInitialState);
+    }
+    const [value, setValue] = useState(storageValue);
     const updatedSetValue = useCallback(
         newValue => {
-            if (newValue === initialState || typeof newValue === 'undefined') {
+            const serializedNewValue = JSON.stringify(newValue);
+            if (
+                serializedNewValue === serializedInitialState ||
+                typeof newValue === 'undefined'
+            ) {
                 localStorage.removeItem(key);
             } else {
-                localStorage.setItem(key, newValue);
+                localStorage.setItem(key, serializedNewValue);
             }
             setValue(newValue ?? initialState);
         },
-        [initialState, key]
+        [initialState, serializedInitialState, key]
     );
     return [value, updatedSetValue];
 }

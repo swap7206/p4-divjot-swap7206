@@ -4,7 +4,7 @@ import NoteAddRoundedIcon from '@mui/icons-material/NoteAddRounded';
 //cmp
 import { ButtonCmp } from "../cmp/ButtonCmp";
 
-const AddItemCmp = () => {
+const AddItemCmp = (props) => {
     const [input, setInput] = useState();
 
     const handleOnInputChange = (event) => {
@@ -17,7 +17,7 @@ const AddItemCmp = () => {
         }
         const temp = JSON.parse(localStorage.getItem("todoList"));
         temp.push(todoItem);
-        localStorage.setItem("todoList", JSON.stringify(temp));
+        props.handleListUpdate(temp);
         setInput("");
     }
 
