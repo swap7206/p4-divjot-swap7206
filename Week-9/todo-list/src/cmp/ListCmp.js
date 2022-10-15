@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Checkbox, Divider, List, Paper, Typography } from '@mui/material'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 //cmp
@@ -6,13 +7,19 @@ import ListItemWithColumns from './ListItemWithColumns'
 
 const ListCmp = (props) => {
     const listItems = props.listItems;
+    const [update, setUpdate] = useState(false);
+
+    useEffect(() => {
+        console.log("hiiiii")
+    }, [props.listItems !== listItems])
+
 
     const handleChange = (event, item, index) => {
         item.checked = event.target.checked
         const temp = listItems;
         temp.splice(index, 1, item);
         props.handleListUpdate(temp);
-        // setListItems(JSON.parse(localStorage.getItem("todoList")));
+        setUpdate(!update);
     }
 
     const handleDeleteItem = (index) => {
@@ -23,7 +30,7 @@ const ListCmp = (props) => {
         } else {
             props.handleListUpdate([]);
         }
-        // setListItems(JSON.parse(localStorage.getItem("todoList")));
+        setUpdate(!update);
     }
 
     return (

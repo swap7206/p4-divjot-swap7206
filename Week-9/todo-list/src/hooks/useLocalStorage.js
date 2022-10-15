@@ -15,9 +15,9 @@ export function useLocalStorageNonString(key, initialState) {
             const serializedNewValue = JSON.stringify(newValue);
             if (
                 serializedNewValue === serializedInitialState ||
-                typeof newValue === 'undefined'
+                typeof newValue === 'undefined' || newValue === null
             ) {
-                localStorage.removeItem(key);
+                localStorage.setItem(key, JSON.stringify([]));
             } else {
                 localStorage.setItem(key, serializedNewValue);
             }
