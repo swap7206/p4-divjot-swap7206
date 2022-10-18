@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Checkbox, Divider, List, Paper, Typography } from '@mui/material'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 //cmp
@@ -8,10 +8,6 @@ import ListItemWithColumns from './ListItemWithColumns'
 const ListCmp = (props) => {
     const listItems = props.listItems;
     const [update, setUpdate] = useState(false);
-
-    useEffect(() => {
-        console.log("hiiiii")
-    }, [props.listItems !== listItems])
 
 
     const handleChange = (event, item, index) => {
